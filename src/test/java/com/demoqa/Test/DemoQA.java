@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.assignment.BaseClass.BaseClass;
@@ -36,7 +37,7 @@ public class DemoQA extends BaseClass {
 	
 	@BeforeMethod
 	public void setUp() throws Exception{
-		launchBrowser("chrome");
+		launchBrowser();
 		select = new Selectable();	
 		form = new ContactForm();
 		drop = new Droppable();
@@ -46,7 +47,7 @@ public class DemoQA extends BaseClass {
 		
 	}
 	
-	
+	@Test
 	public void TC001_SelectableTest() throws Exception {
 		
 		openURL("https://demoqa.com/selectable/");
@@ -55,18 +56,18 @@ public class DemoQA extends BaseClass {
 	}
 	
 	
-	
+	//@Test
 	public void TC002_ContactFormTest() {
 		
 		openURL("https://demoqa.com/html-contact-form/");
-		form.enterContactForm("Ravi", "kumar", "India", "New Subject");
+		form.enterContactForm("Renju", "Alex", "India", "Learning Selenium");
 		form.openGoogleLink();
 		form.openGoogleLinkIsHere();
 		form.clickSubmit();
 		
 	}
 	
-	
+	//@Test
 	public void TC003_DragAndDropTest() {
 		
 		openURL("https://demoqa.com/droppable/");
@@ -74,7 +75,7 @@ public class DemoQA extends BaseClass {
 			
 	}
 	
-	@Test
+	//@Test
 	public void TC004_DatepickerTest() {
 		
 		openURL("https://demoqa.com/datepicker/");
@@ -82,7 +83,7 @@ public class DemoQA extends BaseClass {
 
 	}
 	
-	
+	//@Test
 	public void TC005_SelectMenuTest() {
 		
 		openURL("https://demoqa.com/selectmenu/");
@@ -93,7 +94,7 @@ public class DemoQA extends BaseClass {
 		
 	}
 	
-	
+	//@Test
 	public void TC006_Horizontal_ControlGroupTest() {
 	
 		openURL("https://demoqa.com/controlgroup/");
@@ -104,7 +105,7 @@ public class DemoQA extends BaseClass {
 		ctrlGrp.clickBookNow();
 	}
 	
-	
+	//@Test
 	public void TC006_001_Vertical_ControlGroupTest() {
 	
 		openURL("https://demoqa.com/controlgroup/");
@@ -116,10 +117,7 @@ public class DemoQA extends BaseClass {
 	}
 	
 	
-	public void test() {
-		
-		
-		
-	}
+	
+	
 
 }

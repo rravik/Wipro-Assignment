@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 public class CommonPageActions extends BaseClass {
 
 	//HIGHLIGHT ELEMENT
@@ -99,5 +101,27 @@ public class CommonPageActions extends BaseClass {
 		}
 	}
 	
+	//waits for element to be clickable
+		public static void toBeclickable(WebElement element)
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			
+		}
+		
+		//waits for proper data to be populated
+		public static void toBeclickable(WebElement element,String data)
+		{
+			while(!element.getAttribute("innerText").toLowerCase().contains(data.toLowerCase()))
+			{
+				try {
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					
+					e.printStackTrace();
+				}
+			}
+			
+		}
 	
 }

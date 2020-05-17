@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.assignment.BaseClass.BaseClass;
 import com.assignment.Utils.Json_Reader;
 import com.assignment.Utils.Xls_Reader;
+
 import com.olay.Pages.ForgotPasswordPage;
 import com.olay.Pages.Germary_Registration;
 import com.olay.Pages.HomePage;
@@ -20,13 +21,14 @@ public class germanyRegistrationTest extends BaseClass{
 	HomePage home;
 	ForgotPasswordPage forgotPwdPage;
 	Json_Reader ddt = new Json_Reader();
+	
 
 	public String username = "username7150391@gmail.com";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
 
-		launchBrowser("chrome");
+		launchBrowser();
 		germaryRegister = new Germary_Registration();
 		loginPage = new LoginPage();
 		home = new HomePage();

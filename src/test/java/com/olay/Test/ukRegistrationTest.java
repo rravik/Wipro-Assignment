@@ -28,7 +28,7 @@ public class ukRegistrationTest extends BaseClass {
 	@BeforeMethod
 	public void setUp() throws Exception {
 
-		launchBrowser("chrome");
+		launchBrowser();
 		ukRegister = new UK_Registration();
 		loginPage = new LoginPage();
 		forgotPwdPage = new ForgotPasswordPage();
